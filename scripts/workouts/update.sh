@@ -8,9 +8,9 @@ curl "${API}${URL_PATH}" \
   --header "Authorization: Token token=$TOKEN"
   --data ' {
     "workout": {
-      "name": "'"${TEXT}"'",
-      "duration": "'"${INTEGER}"'",
-      "repetitions": "'"${INTEGER}"'",
+      "name": "'"${NAME}"'",
+      "duration": "'"${DURATION}"'",
+      "repetitions": "'"${REPETITION}"'",
       "date": "'"${DATE}"'"
     }
   }'

@@ -4,7 +4,7 @@ class WorkoutsController < OpenReadController
   # GET /workouts
   def index
     @workouts = Workout.all
-
+    # @workouts = current_user.workouts
     render json: @workouts
   end
 
@@ -16,6 +16,7 @@ class WorkoutsController < OpenReadController
   # POST /workouts
   def create
     @workout = Workout.new(workout_params)
+    # @workout = current_user.workouts.build(workout_params)
 
     if @workout.save
       render json: @workout, status: :created, location: @workout
