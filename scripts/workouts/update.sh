@@ -5,7 +5,7 @@ URL_PATH="/workouts/${ID}"
 curl "${API}${URL_PATH}" \
   --include \
   --request PATCH \
-  --header "Authorization: Token token=$TOKEN"
+  --header "Authorization: Token token=${TOKEN}"
   --data ' {
     "workout": {
       "name": "'"${NAME}"'",
