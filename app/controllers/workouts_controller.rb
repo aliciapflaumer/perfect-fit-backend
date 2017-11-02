@@ -1,26 +1,32 @@
 class WorkoutsController < OpenReadController
-  before_action :set_workout, only: [:show, :update, :destroy]
+  before_action :set_workout, only: [:update, :destroy]
 
   # GET /workouts
   def index
+<<<<<<< HEAD
     @workouts = Workout.all
     # @workouts = current_user.workouts
+=======
+    # @workouts = Workout.all
+    @workouts = current_user.workouts
+>>>>>>> feature#1
 
     render json: @workouts
   end
 
   # GET /workouts/1
   def show
-    render json: @workout
+    # render json: @workout
+    render json: Workout.find(params[:id])
   end
 
   # POST /workouts
   def create
-    @workout = Workout.new(workout_params)
-    # @workout = current_user.workouts.build(workout_params)
+    # @workout = Workout.new(workout_params)
+    @workout = current_user.workouts.build(workout_params)
 
     if @workout.save
-      render json: @workout, status: :created, location: @workout
+      render json: @workout, status: :created
     else
       render json: @workout.errors, status: :unprocessable_entity
     end
@@ -43,7 +49,8 @@ class WorkoutsController < OpenReadController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_workout
-      @workout = Workout.find(params[:id])
+      @workout = current_user.workouts.find(params[:id])
+      # @workout = Workout.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
