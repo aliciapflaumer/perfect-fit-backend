@@ -3,13 +3,12 @@ class WorkoutsController < OpenReadController
 
   # GET /workouts
   def index
-<<<<<<< HEAD
+
     @workouts = Workout.all
     # @workouts = current_user.workouts
-=======
+
     # @workouts = Workout.all
     @workouts = current_user.workouts
->>>>>>> feature#1
 
     render json: @workouts
   end
