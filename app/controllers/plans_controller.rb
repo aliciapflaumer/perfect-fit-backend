@@ -1,24 +1,29 @@
-class PlansController < ApplicationController
-  before_action :set_plan, only: [:show, :update, :destroy]
+# frozen_string_literal: true
+
+class PlansController < OpenReadController
+  before_action :set_plan, only: %i[update destroy]
 
   # GET /plans
   def index
     @plans = Plan.all
+    # plans = current_user.plans
 
     render json: @plans
   end
 
   # GET /plans/1
   def show
-    render json: @plan
+    # render json: @plan
+    render json: Plan.find(params[:id])
   end
 
   # POST /plans
   def create
-    @plan = Plan.new(plan_params)
+    # @plan = Plan.new(plan_params)
+    @plan = current_user.plans.build(plan_params)
 
     if @plan.save
-      render json: @plan, status: :created, location: @plan
+      render json: @plan, status: :created
     else
       render json: @plan.errors, status: :unprocessable_entity
     end
@@ -41,7 +46,8 @@ class PlansController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_plan
-      @plan = Plan.find(params[:id])
+      @plan = current_user.plans.find(params[:id])
+      # @plan = Plan.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
