@@ -4,10 +4,8 @@ class WorkoutsController < OpenReadController
   # GET /workouts
   def index
 
-    @workouts = Workout.all
-    # @workouts = current_user.workouts
-
     # @workouts = Workout.all
+
     @workouts = current_user.workouts
 
     render json: @workouts
