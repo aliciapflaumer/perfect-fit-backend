@@ -11,8 +11,7 @@ curl "${API}${URL_PATH}" \
     "workout": {
       "name": "'"${NAME}"'",
       "duration": "'"${DURATION}"'",
-      "repetitions": "'"${REPETITION}"'",
-      "date": "'"${DATE}"'"
+      "repetitions": "'"${REPETITION}"'"
     }
   }'
 
