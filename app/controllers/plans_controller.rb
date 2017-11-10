@@ -6,7 +6,7 @@ class PlansController < OpenReadController
   # GET /plans
   def index
     @plans = Plan.all
-    # plans = current_user.plans
+    # @plans = current_user.plans
 
     render json: @plans
   end
@@ -44,14 +44,15 @@ class PlansController < OpenReadController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_plan
-      @plan = current_user.plans.find(params[:id])
-      # @plan = Plan.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def plan_params
-      params.require(:plan).permit(:name, :date, :location, :difficulty)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_plan
+    @plan = current_user.plans.find(params[:id])
+    # @plan = Plan.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def plan_params
+    params.require(:plan).permit(:name, :date, :location, :difficulty)
+  end
 end
