@@ -52,6 +52,6 @@ class WorkoutsController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def workout_params
-      params.require(:workout).permit(:name, :duration, :repetitions)
+      params.require(:workout).permit(:name, :duration, :repetitions, :plan_id)
     end
 end

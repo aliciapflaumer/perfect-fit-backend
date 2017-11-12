@@ -1,3 +1,3 @@
 class PlanSerializer < ActiveModel::Serializer
-  attributes :id, :name, :date, :location, :difficulty, :checkbox
+  attributes :id, :name, :date, :location, :difficulty, :user_id
 end

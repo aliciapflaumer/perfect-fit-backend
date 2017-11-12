@@ -53,6 +53,6 @@ class PlansController < OpenReadController
 
   # Only allow a trusted parameter "white list" through.
   def plan_params
-    params.require(:plan).permit(:name, :date, :location, :difficulty, :checkbox)
+    params.require(:plan).permit(:name, :date, :location, :difficulty, :user_id)
   end
 end
