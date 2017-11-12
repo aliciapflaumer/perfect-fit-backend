@@ -5,8 +5,8 @@ class PlansController < OpenReadController
 
   # GET /plans
   def index
-    @plans = Plan.all
-    # @plans = current_user.plans
+    # @plans = Plan.all
+    @plans = current_user.plans
 
     render json: @plans
   end
