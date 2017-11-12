@@ -3,4 +3,5 @@
 class User < ApplicationRecord
   include Authentication
   has_many :workouts
+  has_many :plans
 end

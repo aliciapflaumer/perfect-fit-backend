@@ -2,5 +2,6 @@
 
 class Workout < ApplicationRecord
   belongs_to :user
-  validates :name, :duration, :repetitions, :date, presence: true
+  belongs_to :plan
+  validates :name, :duration, :repetitions, :plan_id, presence: true
 end

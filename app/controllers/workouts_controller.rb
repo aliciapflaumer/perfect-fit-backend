@@ -4,10 +4,8 @@ class WorkoutsController < OpenReadController
   # GET /workouts
   def index
 
-    @workouts = Workout.all
-    # @workouts = current_user.workouts
-
     # @workouts = Workout.all
+
     @workouts = current_user.workouts
 
     render json: @workouts
@@ -54,6 +52,6 @@ class WorkoutsController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def workout_params
-      params.require(:workout).permit(:name, :duration, :repetitions, :date)
+      params.require(:workout).permit(:name, :duration, :repetitions, :plan_id)
     end
 end
