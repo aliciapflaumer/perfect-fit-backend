@@ -56,13 +56,13 @@ User -< Plan -< Workout
 | POST   | `/sign-in`             | `users#signin`     |
 | DELETE | `/sign-out/:id`        | `users#signout`    |
 | PATCH  | `/change-password/:id` | `users#changepw`   |
-
+|--------|----------------------- |------------------  |
 | POST   | `/workouts`            | `workouts#create`  |
 | PATCH  | `/workouts/:id`        | `workouts#update`  |
 | GET    | `/workouts`            | `workouts#index`   |
 | GET    | `/workouts/:id`        | `workouts#show`    |
 | DELETE | `/workouts/:id`        | `workouts#destroy` |
-
+|--------|----------------------- |------------------  |
 | POST   | `/plans`               | `plans#create`     |
 | PATCH  | `/plans/:id`           | `plans#update`     |
 | GET    | `/plans`               | `plans#index`      |
